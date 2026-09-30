@@ -136,16 +136,15 @@ been peer reviewed or published; a link will be added here when it is public.
 ## Data availability
 
 The code, configurations, tests and reproduction scripts are in this
-repository: https://github.com/joelprince2601/kerrray. An archived release
-with a DOI does not exist yet.
+repository: https://github.com/joelprince2601/kerrray. Release v0.1.1 is
+archived at Zenodo: https://doi.org/10.5281/zenodo.23051526.
 
 ## Citation
 
-Citation metadata are in [CITATION.cff](CITATION.cff). Until a DOI exists,
-cite the software as:
+Citation metadata are in [CITATION.cff](CITATION.cff). Cite the software as:
 
 > Prince, J. KerrRay: a CPU ray tracer for photon geodesics in Kerr
-> spacetime, version 0.1.0 (software), https://github.com/joelprince2601/kerrray.
+> spacetime, version v0.1.1 (software), Zenodo, https://doi.org/10.5281/zenodo.23051526.
 
 ## License
 
