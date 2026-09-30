@@ -1,0 +1,11 @@
+pixel 29312: xi = -2.7090e-02, eta = 0.651; exact polar turning point theta_min ~ 2.853e-02 rad
+ rtol=0.0001: 10 accepted steps, final OUT_OF_DOMAIN; closest approach to the axis at step 9:
+    r= 804.8855 theta=+1.046993e+00 phi=+0.0000 p_theta=-8.4378e-01 RUNNING
+    r= 605.4006 theta=+1.046647e+00 phi=+0.0000 p_theta=-8.4382e-01 RUNNING
+    r= 405.9157 theta=+1.045961e+00 phi=+0.0001 p_theta=-8.4391e-01 RUNNING
+    r=-412.1880 theta=+1.028821e+00 phi=+0.0007 p_theta=-8.4621e-01 OUT_OF_DOMAIN
+ rtol=1e-06: 101 accepted steps, final CAPTURED; closest approach to the axis at step 100:
+    r=   1.8660 theta=+5.854375e-01 phi=-3.6918 p_theta=-9.0633e-01 RUNNING
+    r=   1.8660 theta=+5.854375e-01 phi=-3.7517 p_theta=-9.0633e-01 RUNNING
+    r=   1.8660 theta=+5.854374e-01 phi=-3.8116 p_theta=-9.0633e-01 RUNNING
+    r=   1.8660 theta=+5.854373e-01 phi=-3.8715 p_theta=-9.0633e-01 CAPTURED

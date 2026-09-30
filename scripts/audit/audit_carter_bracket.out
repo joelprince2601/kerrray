@@ -1,0 +1,4 @@
+{Q_full, H} -> 0
+{Q_null, H} - 2H{a^2 cos^2, H} -> 0
+{a^2 cos^2 theta, H} = -2*a**2*p_theta*sin(2*theta)/(a**2*cos(2*theta) + a**2 + 2*r**2)  (= -a^2 sin(2 theta) p_theta / Sigma)
+K = Q_null + (L - aE)^2 also: 0

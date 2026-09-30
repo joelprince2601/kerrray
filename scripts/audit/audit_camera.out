@@ -1,0 +1,23 @@
+tetrad: max |e g e^T - eta| and |u_phi| of e_(t) over 500 points: 3.09e-13
+a=+0.00 i= 60.0 r_o=  1000: |exact map - pixel| = 2.7e-15; E_f>0: True, E_b<0: True, dr/dl_b<0: True, max|xi_b-xi_f| = 0.0e+00, max|eta_b-eta_f| = 0.0e+00, max|H| = 1.6e-16
+a=+0.90 i= 60.0 r_o=  1000: |exact map - pixel| = 4.4e-15; E_f>0: True, E_b<0: True, dr/dl_b<0: True, max|xi_b-xi_f| = 0.0e+00, max|eta_b-eta_f| = 0.0e+00, max|H| = 2.9e-16
+a=+0.99 i= 17.0 r_o=    50: |exact map - pixel| = 3.6e-15; E_f>0: True, E_b<0: True, dr/dl_b<0: True, max|xi_b-xi_f| = 0.0e+00, max|eta_b-eta_f| = 0.0e+00, max|H| = 2.5e-16
+a=-0.70 i=120.0 r_o=    20: |exact map - pixel| = 1.8e-15; E_f>0: True, E_b<0: True, dr/dl_b<0: True, max|xi_b-xi_f| = 0.0e+00, max|eta_b-eta_f| = 0.0e+00, max|H| = 2.7e-16
+k * alpha_cam / alpha_Bardeen =  (-4*M*a**2*u**3*sin(theta)**2 + 2*M*a**2*u**3 + 4*M*a*u**3*xi - a**2*u**2 + 2)*sin(theta)/(2*Abs(sin(theta)))
+k * beta_cam  / beta_Bardeen  =  M*a**2*u**3*cos(theta)**2 + 2*M*a*u**3*xi - a**2*u**2*cos(theta)**2/2 + 1
+   lapse^2 series: 1 + u**2*(a**2*sin(theta)**2 + a**2*cos(theta)**2 - a**2) + u**3*(-2*M*a**2*sin(theta)**2 - 2*M*a**2*cos(theta)**2 - 2*M*(a**2*sin(theta)**2 - 2*a**2)) - 2*M*u + O(u**4)
+
+residual after the 1/sqrt(1-2M/r_o) correction, i = 60 deg (analytic curve mapped exactly):
+  r_o=  1000 a=0.00: uncorrected radial offset mean -5.199e-03 M; corrected: max|disp| 1.79e-15 M, radial mean -2.18e-16, max|radial| 1.77e-15 M, alpha-shift of centroid +0.00e+00 M
+  r_o=  1000 a=0.50: uncorrected radial offset mean -5.128e-03 M; corrected: max|disp| 7.82e-07 M, radial mean -4.03e-07, max|radial| 7.82e-07 M, alpha-shift of centroid -9.29e-08 M
+  r_o=  1000 a=0.90: uncorrected radial offset mean -4.892e-03 M; corrected: max|disp| 2.74e-06 M, radial mean -1.21e-06, max|radial| 2.74e-06 M, alpha-shift of centroid -4.82e-07 M
+  r_o=  1000 a=0.99: uncorrected radial offset mean -4.723e-03 M; corrected: max|disp| 3.37e-06 M, radial mean -1.40e-06, max|radial| 3.37e-06 M, alpha-shift of centroid -5.94e-07 M
+  r_o=   100 a=0.00: uncorrected radial offset mean -5.222e-02 M; corrected: max|disp| 1.79e-15 M, radial mean -1.93e-16, max|radial| 1.74e-15 M, alpha-shift of centroid +0.00e+00 M
+  r_o=   100 a=0.50: uncorrected radial offset mean -5.156e-02 M; corrected: max|disp| 1.07e-04 M, radial mean -4.47e-05, max|radial| 1.07e-04 M, alpha-shift of centroid -1.99e-05 M
+  r_o=   100 a=0.90: uncorrected radial offset mean -4.927e-02 M; corrected: max|disp| 3.37e-04 M, radial mean -1.35e-04, max|radial| 3.37e-04 M, alpha-shift of centroid -6.69e-05 M
+  r_o=   100 a=0.99: uncorrected radial offset mean -4.758e-02 M; corrected: max|disp| 4.10e-04 M, radial mean -1.56e-04, max|radial| 4.10e-04 M, alpha-shift of centroid -7.90e-05 M
+
+orientation check (numba backend, 64^2, fov 8, r_o 1000, rtol 1e-8):
+  a=+0.90 i=60: image alpha range [-2.878, +6.381] centroid +1.706; analytic alpha range [-3.096, +6.589]; pixel 0.250
+  a=+0.99 i=90: image alpha range [-2.127, +6.882] centroid +2.225; analytic alpha range [-2.252, +6.983]; pixel 0.250
+  a=-0.90 i=60: image alpha range [-6.381, +2.878] centroid -1.706; analytic alpha range [-6.589, +3.096]; pixel 0.250

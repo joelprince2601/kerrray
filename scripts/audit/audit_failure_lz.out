@@ -1,0 +1,4 @@
+a=0.0: failed 246; |L_z/E| of failed: max 0.0406, median 0.0135; median over image 3.468
+a=0.5: failed 325; |L_z/E| of failed: max 0.0406, median 0.0135; median over image 3.468
+a=0.9: failed 241; |L_z/E| of failed: max 0.0406, median 0.0135; median over image 3.468
+a=0.99: failed 219; |L_z/E| of failed: max 0.0406, median 0.0135; median over image 3.468

@@ -1,0 +1,49 @@
+# KerrRay configuration: Schwarzschild (non-rotating) setup.
+# Schema: PROJECT.md section 34 plus docs/architecture.md section 7
+# (src/kerrray/utils/config.py; docs/decisions.md D-004, D-009).
+# Units: G = c = 1, lengths in units of the black-hole mass M (M = 1 here).
+experiment:
+  name: schwarzschild
+  description: >-
+    Schwarzschild limit (spin 0) used by the Phase 3 validation experiments
+    EXP-001 (photon sphere) and EXP-002 (critical impact parameter). Reference
+    values (3M and 3 sqrt(3) M) are used only to check computed results and are
+    never stored here.
+  seed: 0
+  output_dir: runs
+  report_dir: reports
+  parameters:
+    # Section 12 validation inputs: bisection tolerances (units of M) on the
+    # photon-sphere radius and the critical impact parameter, and the bisection
+    # iteration cap. Experiment inputs, never reference values.
+    validation:
+      photon_sphere_tol: 1.0e-6
+      critical_b_tol: 1.0e-6
+      bisection_iterations: 60
+
+black_hole:
+  mass: 1.0
+  spin: 0.0
+
+observer:
+  radius: 1000.0
+  inclination_deg: 90.0   # equatorial plane; Schwarzschild is spherically symmetric
+  phi_deg: 0.0
+
+integration:
+  method: rk45
+  rtol: 1e-9
+  atol: 1e-11
+  max_steps: 100000
+  step_size: 0.01
+  lambda_max: 10000.0
+
+raytrace:
+  resolution: 64
+  fov: 12.0
+  backend: numpy
+  dtype: float64
+
+termination:
+  horizon_epsilon: 1e-6
+  escape_radius: 1000.0

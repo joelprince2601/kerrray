@@ -1,0 +1,34 @@
+geodesic_rhs vs independent grad(H), max componentwise relative error (3000 states): 2.87e-11
+hamiltonian vs independent H, max relative error: 1.73e-11
+dH/dp_phi = 0 (0 means cross term handled with factor 2 in H)
+Poisson bracket {Q, H} simplifies to: 2*p_theta*(2*M*a**2*p_t*r*(a**2*p_t + a*p_phi + p_t*r**2)*sin(theta)**4 - a**2*p_r**2*(-2*M*r + a**2 + r**2)**2*sin(theta)**4 - a**2*p_theta**2*(-2*M*r + a**2 + r**2)*sin(theta)**4 + p_phi*(2*M*a**3*p_t*r*(cos(theta)**2 - 1)**2 - 4*M*a**2*p_phi*r*cos(theta)**2 + 2*M*a**2*p_phi*r - 2*M*p_phi*r**3 + a**4*p_phi*(cos(theta)**2 - 1)**2 + 2*a**4*p_phi*cos(theta)**2 - a**4*p_phi + 2*a**2*p_phi*r**2*cos(theta)**2 + p_phi*r**4) + (a**2*cos(theta)**2 + r**2)*(a**2*p_t**2*sin(theta)**4 - p_phi**2)*(-2*M*r + a**2 + r**2))*cos(theta)/((a**2*cos(theta)**2 + r**2)**2*(-2*M*r + a**2 + r**2)*sin(theta)**3)
+2 Sigma H - [(Delta p_r^2 - R/Delta) + (p_th^2 - Theta)] -> 0
+carter_constant vs independent Q, max relative error: 2.66e-15
+photon_from_constants: max |H|/E^2 = 3.30e-14, max Q error = 3.94e-16, sign/magnitude violations = 0
+equatorial a=+0.0 prograde=True: L_z=+4.000 a*L_z=+0.000 dphi/dl=+0.0044 dr/dl=-0.9917 H=5.4e-17
+   tangential r0= 3.50: xi=  +5.3463 R(r0)=-2.8e-14 H=+0.0e+00 dt/dl=+2.333 a*L=+0.000
+   tangential r0= 3.00: xi=  +5.1962 R(r0)=+0.0e+00 H=+0.0e+00 dt/dl=+3.000 a*L=+0.000
+   tangential r0= 5.00: xi=  +6.4550 R(r0)=+0.0e+00 H=-1.1e-16 dt/dl=+1.667 a*L=+0.000
+   tangential r0=12.00: xi= +13.1453 R(r0)=+3.6e-12 H=-1.1e-16 dt/dl=+1.200 a*L=+0.000
+equatorial a=+0.0 prograde=False: L_z=-4.000 a*L_z=-0.000 dphi/dl=-0.0044 dr/dl=-0.9917 H=5.4e-17
+   tangential r0= 3.50: xi=  -5.3463 R(r0)=-2.8e-14 H=+0.0e+00 dt/dl=+2.333 a*L=-0.000
+   tangential r0= 3.00: xi=  -5.1962 R(r0)=+0.0e+00 H=+0.0e+00 dt/dl=+3.000 a*L=-0.000
+   tangential r0= 5.00: xi=  -6.4550 R(r0)=+0.0e+00 H=-1.1e-16 dt/dl=+1.667 a*L=-0.000
+   tangential r0=12.00: xi= -13.1453 R(r0)=+3.6e-12 H=-1.1e-16 dt/dl=+1.200 a*L=-0.000
+equatorial a=+0.7 prograde=True: L_z=+4.000 a*L_z=+2.800 dphi/dl=+0.0045 dr/dl=-0.9918 H=5.2e-17
+   tangential r0= 3.00: xi=  +4.2045 R(r0)=+2.1e-14 H=-2.2e-16 dt/dl=+2.251 a*L=+2.943
+   tangential r0= 5.00: xi=  +6.0929 R(r0)=+0.0e+00 H=+0.0e+00 dt/dl=+1.548 a*L=+4.265
+   tangential r0=12.00: xi= +13.0322 R(r0)=+0.0e+00 H=+0.0e+00 dt/dl=+1.187 a*L=+9.123
+equatorial a=+0.7 prograde=False: L_z=-4.000 a*L_z=-2.800 dphi/dl=-0.0044 dr/dl=-0.9922 H=-1.7e-16
+   tangential r0= 3.00: xi=  -7.0045 R(r0)=-2.8e-14 H=+0.0e+00 dt/dl=+3.749 a*L=-4.903
+   tangential r0= 5.00: xi=  -7.0262 R(r0)=+1.1e-13 H=-1.1e-16 dt/dl=+1.785 a*L=-4.918
+   tangential r0=12.00: xi= -13.3122 R(r0)=-7.3e-12 H=+1.1e-16 dt/dl=+1.213 a*L=-9.319
+equatorial a=-0.7 prograde=True: L_z=-4.000 a*L_z=+2.800 dphi/dl=-0.0045 dr/dl=-0.9918 H=5.2e-17
+   tangential r0= 3.00: xi=  -4.2045 R(r0)=+2.1e-14 H=-2.2e-16 dt/dl=+2.251 a*L=+2.943
+   tangential r0= 5.00: xi=  -6.0929 R(r0)=+0.0e+00 H=+0.0e+00 dt/dl=+1.548 a*L=+4.265
+   tangential r0=12.00: xi= -13.0322 R(r0)=+0.0e+00 H=+0.0e+00 dt/dl=+1.187 a*L=+9.123
+equatorial a=-0.7 prograde=False: L_z=+4.000 a*L_z=-2.800 dphi/dl=+0.0044 dr/dl=-0.9922 H=-1.7e-16
+   tangential r0= 3.00: xi=  +7.0045 R(r0)=-2.8e-14 H=+0.0e+00 dt/dl=+3.749 a*L=-4.903
+   tangential r0= 5.00: xi=  +7.0262 R(r0)=+1.1e-13 H=-1.1e-16 dt/dl=+1.785 a*L=-4.918
+   tangential r0=12.00: xi= +13.3122 R(r0)=-7.3e-12 H=+1.1e-16 dt/dl=+1.213 a*L=-9.319
+null_momentum_pt inside ergosphere: p_t = -0.7290732741756364 dt/dl = 3.5549524856882693 H = 5.551115123125783e-16

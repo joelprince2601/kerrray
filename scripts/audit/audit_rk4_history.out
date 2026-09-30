@@ -1,0 +1,16 @@
+197 of 200 photons captured under RK45 rtol 1e-10; RK4 h = 0.1 history of these:
+('crossed r_+ (r_new <= r_+)', 'OUT_OF_DOMAIN'): 166 photons; example r sequence around the bad step: [1.729, 1.5922, 1.5268, -760.2809]
+('jumped outward', 'OUT_OF_DOMAIN'): 25 photons; example r sequence around the bad step: [1.608, 1.5423, 1.4797, 13.3048, -1785.7456]
+('other (last theta 3.16, min r 1.745)', 'OUT_OF_DOMAIN'): 1 photons; example r sequence around the bad step: [1.9752, 1.9011, 1.8247, 1.7451]
+('jumped outward', 'ESCAPED'): 3 photons; example r sequence around the bad step: [1.7717, 1.6587, 1.5359, 5.3065, 54.6673, 89.7496]
+('other (last theta -2.03, min r 1.837)', 'OUT_OF_DOMAIN'): 1 photons; example r sequence around the bad step: [2.126, 2.0285, 1.9309, 1.8374]
+('other (last theta 2.94, min r 2.079)', 'ESCAPED'): 1 photons; example r sequence around the bad step: [996.6786, 997.9185, 999.1585, 1000.3985]
+
+shadow masks, a = 0.9, i = 60, r_o = 1000, fov 8 (numba): RK4 vs RK45 rtol 1e-8
+  h=0.1: states {'ESCAPED': 2867, 'CAPTURED': 1, 'OUT_OF_DOMAIN': 1228}; reference shadow 1250 px; non-escaped-mask differs from reference at 21 px (false escapes 21, false shadow 0)
+  h=0.05: states {'ESCAPED': 2855, 'OUT_OF_DOMAIN': 1241}; reference shadow 1250 px; non-escaped-mask differs from reference at 9 px (false escapes 9, false shadow 0)
+  h=0.01: states {'ESCAPED': 2854, 'OUT_OF_DOMAIN': 1242}; reference shadow 1250 px; non-escaped-mask differs from reference at 8 px (false escapes 8, false shadow 0)
+
+location of RK4 false escapes (distance in pixels to the nearest reference-escaped pixel):
+  h=0.1: distances [1.0, 1.0, 2.0, 2.0, 2.0, 2.8, 3.2, 3.6, 3.6, 4.1, 4.1, 4.5, 5.0, 5.0, 5.0, 6.0, 7.1, 9.2, 12.1, 14.1, 16.0]
+  h=0.01: distances [1.0, 2.0, 2.8, 3.0, 4.2, 4.5, 5.0, 13.5]

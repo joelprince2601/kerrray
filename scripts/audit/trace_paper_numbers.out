@@ -1,0 +1,174 @@
+== Table 3 / 5.1: convergence (paper/data/shadow_convergence.json)
+ a=0.0: rms 64..512 = 0.0587, 0.03, 0.0133, 0.00669; rms px@512 0.214; max@512 0.0144 M (0.46 px); area@512 0.00047; identical for rtol<=1e-5: True
+ a=0.5: rms 64..512 = 0.056, 0.0286, 0.0144, 0.007; rms px@512 0.224; max@512 0.0151 M (0.48 px); area@512 0.00021; identical for rtol<=1e-5: False
+ a=0.9: rms 64..512 = 0.06, 0.0278, 0.014, 0.00703; rms px@512 0.225; max@512 0.015 M (0.48 px); area@512 8.4e-06; identical for rtol<=1e-5: True
+ a=0.99: rms 64..512 = 0.0567, 0.0277, 0.0147, 0.00717; rms px@512 0.229; max@512 0.0147 M (0.47 px); area@512 0.00014; identical for rtol<=1e-5: True
+ fits: {"0.0|0.0001": {"rms_slope_vs_N": -1.0520170140830443, "max_slope_vs_N": -0.7144066793664052, "area_slope_vs_N": -1.3582569352015916}, "0.0|1e-05": {"rms_slope_vs_N": -1.0575295597036554, "max_slope_vs_N": -1.0007396701796896, "area_slope_vs_N": -0.5505548536523767}, "0.0|1e-06": {"rms_slope_vs_N": -1.0575295597036554, "max_slope_vs_N": -1.0007396701796896, "area_slope_vs_N": -0.5505548536523767}, "0.0|1e-08": {"rms_slope_vs_N": -1.0575295597036554, "max_slope_vs_N": -1.0007396701796896, "area_slope_vs_N": -0.5505548536523767}, "0.0|1e-10": {"rms_slope_vs_N": -1.0575295597036554, "max_slope_vs
+ rms_px over all rtol<=1e-5 rows: 0.213 .. 0.24
+ max_px at 512, rtol<=1e-5: 0.46 .. 0.483
+ failed rays by (N, rtol):
+   N=64 rtol=0.0001: 0, 0, 0, 0
+   N=64 rtol=1e-05: 0, 0, 0, 0
+   N=128 rtol=0.0001: 0, 0, 0, 0
+   N=128 rtol=1e-05: 0, 0, 0, 0
+   N=256 rtol=0.0001: 120, 48, 5, 6
+   N=256 rtol=1e-05: 0, 0, 0, 0
+   N=512 rtol=0.0001: 246, 325, 241, 220
+   N=512 rtol=1e-05: 0, 0, 0, 0
+ failed max |alpha| (M) at rtol 1e-4: 0.0312 .. 0.0469
+ runtime N=512 re-run (current file): rtol1e-5 13.9 .. 18.6 s, rtol1e-10 63.3 .. 74.5 s, ratio 3.6 .. 5.31
+ runtime N=512 original @7788ef7: rtol1e-5 14.3 .. 17.6 s, rtol1e-10 58 .. 105 s, ratio 4.05 .. 7.29
+ max error at rtol 1e-4, N=512 (M): 0.0278, 0.0859, 0.0458, 0.0696
+ max-error ratio 1e-4/1e-5 at 512: 1.94, 5.69, 3.05, 4.73
+
+== 5.2, 5.5, 5.7: oracle (paper/data/oracle.json)
+ group core: 24 rows
+   a=0.0 i=60.0 N=128 rtol=0.0001 r_o=1000 float64: disagree 4 (max 0.0 px), failed 0 (outside 0), rms px traced 0.240 oracle 0.240
+   a=0.0 i=60.0 N=512 rtol=0.0001 r_o=1000 float64: disagree 36 (max 28.4 px), failed 246 (outside 24), rms px traced 0.217 oracle 0.214
+   a=0.0 i=60.0 N=128 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.240 oracle 0.240
+   a=0.0 i=60.0 N=512 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.214 oracle 0.214
+   a=0.0 i=60.0 N=128 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.240 oracle 0.240
+   a=0.0 i=60.0 N=512 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.214 oracle 0.214
+   a=0.5 i=60.0 N=128 rtol=0.0001 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.229 oracle 0.229
+   a=0.5 i=60.0 N=512 rtol=0.0001 r_o=1000 float64: disagree 39 (max 58.8 px), failed 325 (outside 34), rms px traced 0.255 oracle 0.224
+   a=0.5 i=60.0 N=128 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.229 oracle 0.229
+   a=0.5 i=60.0 N=512 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.224 oracle 0.224
+   a=0.5 i=60.0 N=128 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.229 oracle 0.229
+   a=0.5 i=60.0 N=512 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.224 oracle 0.224
+   a=0.9 i=60.0 N=128 rtol=0.0001 r_o=1000 float64: disagree 2 (max 0.0 px), failed 0 (outside 0), rms px traced 0.222 oracle 0.222
+   a=0.9 i=60.0 N=512 rtol=0.0001 r_o=1000 float64: disagree 63 (max 76.1 px), failed 241 (outside 55), rms px traced 0.237 oracle 0.225
+   a=0.9 i=60.0 N=128 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.222 oracle 0.222
+   a=0.9 i=60.0 N=512 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.225 oracle 0.225
+   a=0.9 i=60.0 N=128 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.222 oracle 0.222
+   a=0.9 i=60.0 N=512 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.225 oracle 0.225
+   a=0.99 i=60.0 N=128 rtol=0.0001 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.222 oracle 0.222
+   a=0.99 i=60.0 N=512 rtol=0.0001 r_o=1000 float64: disagree 56 (max 88.1 px), failed 220 (outside 50), rms px traced 0.245 oracle 0.229
+   a=0.99 i=60.0 N=128 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.222 oracle 0.222
+   a=0.99 i=60.0 N=512 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.229 oracle 0.229
+   a=0.99 i=60.0 N=128 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.222 oracle 0.222
+   a=0.99 i=60.0 N=512 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.229 oracle 0.229
+ group distance: 6 rows
+   a=0.9 i=60.0 N=512 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.225 oracle 0.225
+   a=0.9 i=60.0 N=512 rtol=1e-06 r_o=10000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.226 oracle 0.226
+   a=0.9 i=60.0 N=512 rtol=1e-06 r_o=100000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.227 oracle 0.227
+   a=0.99 i=60.0 N=512 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.229 oracle 0.229
+   a=0.99 i=60.0 N=512 rtol=1e-06 r_o=10000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.226 oracle 0.226
+   a=0.99 i=60.0 N=512 rtol=1e-06 r_o=100000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.225 oracle 0.225
+ group inclination: 24 rows
+   a=0.9 i=17.0 N=128 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.230 oracle 0.230
+   a=0.9 i=17.0 N=256 rtol=1e-06 r_o=1000 float64: disagree 1 (max 0.0 px), failed 0 (outside 0), rms px traced 0.214 oracle 0.214
+   a=0.9 i=17.0 N=512 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.217 oracle 0.217
+   a=0.9 i=17.0 N=128 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.230 oracle 0.230
+   a=0.9 i=17.0 N=256 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.214 oracle 0.214
+   a=0.9 i=17.0 N=512 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.217 oracle 0.217
+   a=0.9 i=85.0 N=128 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.249 oracle 0.249
+   a=0.9 i=85.0 N=256 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.223 oracle 0.223
+   a=0.9 i=85.0 N=512 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.219 oracle 0.219
+   a=0.9 i=85.0 N=128 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.249 oracle 0.249
+   a=0.9 i=85.0 N=256 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.223 oracle 0.223
+   a=0.9 i=85.0 N=512 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.219 oracle 0.219
+   a=0.99 i=17.0 N=128 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.216 oracle 0.216
+   a=0.99 i=17.0 N=256 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.217 oracle 0.217
+   a=0.99 i=17.0 N=512 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.234 oracle 0.234
+   a=0.99 i=17.0 N=128 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.216 oracle 0.216
+   a=0.99 i=17.0 N=256 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.217 oracle 0.217
+   a=0.99 i=17.0 N=512 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.234 oracle 0.234
+   a=0.99 i=85.0 N=128 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.240 oracle 0.240
+   a=0.99 i=85.0 N=256 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.220 oracle 0.220
+   a=0.99 i=85.0 N=512 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.222 oracle 0.222
+   a=0.99 i=85.0 N=128 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.240 oracle 0.240
+   a=0.99 i=85.0 N=256 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.220 oracle 0.220
+   a=0.99 i=85.0 N=512 rtol=1e-10 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.222 oracle 0.222
+ group precision: 4 rows
+   a=0.9 i=60.0 N=256 rtol=1e-06 r_o=1000 float32: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.223 oracle 0.223
+   a=0.9 i=60.0 N=256 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.223 oracle 0.223
+   a=0.99 i=60.0 N=256 rtol=1e-06 r_o=1000 float32: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.235 oracle 0.235
+   a=0.99 i=60.0 N=256 rtol=1e-06 r_o=1000 float64: disagree 0 (max 0.0 px), failed 0 (outside 0), rms px traced 0.235 oracle 0.235
+
+== Table 4: bisection (paper/data/edge_bisection.json)
+ a=0.0 rtol=0.0001: rms 0.018 M, rms/rtol 181.92, failed 23, bracket 1.2e-11, 18.35 s
+ a=0.0 rtol=1e-05: rms 2e-05 M, rms/rtol 1.97, failed 0, bracket 1.2e-11, 0.12 s
+ a=0.0 rtol=1e-06: rms 2e-06 M, rms/rtol 2.02, failed 0, bracket 1.2e-11, 0.14 s
+ a=0.0 rtol=1e-07: rms 1.9e-07 M, rms/rtol 1.93, failed 0, bracket 1.2e-11, 0.15 s
+ a=0.0 rtol=1e-08: rms 2.1e-08 M, rms/rtol 2.09, failed 0, bracket 1.2e-11, 0.20 s
+ a=0.0 rtol=1e-10: rms 1.5e-08 M, rms/rtol 149.65, failed 0, bracket 1.2e-11, 0.35 s
+ a=0.0 rtol=1e-12: rms 1.5e-08 M, rms/rtol 15104.65, failed 0, bracket 1.2e-11, 0.90 s
+ a=0.9 rtol=0.0001: rms 0.026 M, rms/rtol 257.33, failed 38, bracket 1.2e-11, 0.10 s
+ a=0.9 rtol=1e-05: rms 2.2e-05 M, rms/rtol 2.18, failed 1, bracket 1.2e-11, 0.16 s
+ a=0.9 rtol=1e-06: rms 2.2e-06 M, rms/rtol 2.18, failed 0, bracket 1.2e-11, 0.20 s
+ a=0.9 rtol=1e-07: rms 2e-07 M, rms/rtol 2.03, failed 0, bracket 1.2e-11, 0.25 s
+ a=0.9 rtol=1e-08: rms 2.4e-08 M, rms/rtol 2.35, failed 0, bracket 1.2e-11, 0.33 s
+ a=0.9 rtol=1e-10: rms 1.3e-08 M, rms/rtol 125.49, failed 0, bracket 1.2e-11, 0.58 s
+ a=0.9 rtol=1e-12: rms 1.3e-08 M, rms/rtol 12649.03, failed 0, bracket 1.2e-11, 1.34 s
+ a=0.99 rtol=0.0001: rms 0.033 M, rms/rtol 331.75, failed 50, bracket 1.2e-11, 0.21 s
+ a=0.99 rtol=1e-05: rms 2.2e-05 M, rms/rtol 2.20, failed 1, bracket 1.2e-11, 0.22 s
+ a=0.99 rtol=1e-06: rms 3.2e-06 M, rms/rtol 3.15, failed 0, bracket 1.2e-11, 0.22 s
+ a=0.99 rtol=1e-07: rms 2.1e-07 M, rms/rtol 2.14, failed 0, bracket 1.2e-11, 0.25 s
+ a=0.99 rtol=1e-08: rms 2.7e-08 M, rms/rtol 2.69, failed 0, bracket 1.2e-11, 0.34 s
+ a=0.99 rtol=1e-10: rms 1.6e-08 M, rms/rtol 160.39, failed 0, bracket 1.2e-11, 0.61 s
+ a=0.99 rtol=1e-12: rms 1.6e-08 M, rms/rtol 16092.32, failed 0, bracket 1.2e-11, 1.66 s
+
+== Table 5: finite distance (paper/data/finite_distance.json)
+ a=0.0 r_o=1000: uncorrected 196, corrected 0, expected flips 167.4, bound 9e-05 M, k-1 0.001, L 32.6 M
+ a=0.0 r_o=10000: uncorrected 32, corrected 0, expected flips 16.7, bound 9e-05 M, k-1 0.0001, L 32.6 M
+ a=0.0 r_o=100000: uncorrected 0, corrected 0, expected flips 1.7, bound 9e-05 M, k-1 1e-05, L 32.6 M
+ a=0.9 r_o=1000: uncorrected 162, corrected 0, expected flips 161.2, bound 9.3e-05 M, k-1 0.001, L 31.4 M
+ a=0.9 r_o=10000: uncorrected 18, corrected 0, expected flips 16.1, bound 9.3e-05 M, k-1 0.0001, L 31.4 M
+ a=0.9 r_o=100000: uncorrected 0, corrected 0, expected flips 1.6, bound 9.3e-05 M, k-1 1e-05, L 31.4 M
+ a=0.99 r_o=1000: uncorrected 138, corrected 0, expected flips 158.8, bound 9.5e-05 M, k-1 0.001, L 31 M
+ a=0.99 r_o=10000: uncorrected 10, corrected 0, expected flips 15.9, bound 9.5e-05 M, k-1 0.0001, L 31 M
+ a=0.99 r_o=100000: uncorrected 2, corrected 0, expected flips 1.6, bound 9.5e-05 M, k-1 1e-05, L 31 M
+
+== Table 2: winding (paper/data/winding.json)
+ rtol 1e-12 launch 50.0 deltas [0.001, 0.0001, 1e-05, 1e-06, 1e-07, 1e-08]
+ a=0.0 prograde: r_ph 3.0000 gamma 1.0000 pred 0.36647 meas 0.36640 diff -0.020%
+ a=0.3 prograde: r_ph 2.6300 gamma 0.8705 pred 0.42101 meas 0.42094 diff -0.016%
+ a=0.3 retrograde: r_ph 3.3289 gamma 1.1054 pred 0.33152 meas 0.33139 diff -0.040%
+ a=0.6 prograde: r_ph 2.1889 gamma 0.6959 pred 0.52659 meas 0.52648 diff -0.019%
+ a=0.6 retrograde: r_ph 3.6298 gamma 1.1954 pred 0.30656 meas 0.30656 diff -0.001%
+ a=0.9 prograde: r_ph 1.5579 gamma 0.3871 pred 0.94678 meas 0.94661 diff -0.018%
+ a=0.9 retrograde: r_ph 3.9103 gamma 1.2746 pred 0.28752 meas 0.28753 diff +0.001%
+ a=0.99 prograde: r_ph 1.1676 gamma 0.1344 pred 2.72758 meas 2.72675 diff -0.030%
+ a=0.99 retrograde: r_ph 3.9911 gamma 1.2966 pred 0.28263 meas 0.28259 diff -0.015%
+
+== Tables 8, 9 and 5.7: benchmark summaries
+ solver original: repeats 3, reference rtol 1e-13
+   RK4 h = 0.1: 5.8 s, steps 793, median err 0.00055, max 50, compared 34, OOD 20
+   RK4 h = 0.01: 67.7 s, steps 8076, median err 1.8e-07, max 42, compared 40, OOD 20
+   RK45 rtol = 1e-06: 2.3 s, steps 80, median err 0.00018, max 0.24, compared 40, OOD 0
+   RK45 rtol = 1e-08: 2.7 s, steps 174, median err 2.7e-06, max 0.0024, compared 40, OOD 0
+   RK45 rtol = 1e-10: 5.2 s, steps 436, median err 2.4e-08, max 2.4e-05, compared 40, OOD 0
+   RK45 rtol = 1e-12: 10.1 s, steps 1100, median err 2.1e-10, max 1.9e-07, compared 40, OOD 0
+   DOP853 rtol = 1e-06: 9.6 s, steps 40, median err 0.00012, max 0.37, compared 40, OOD 0
+   DOP853 rtol = 1e-08: 12.7 s, steps 64, median err 1e-06, max 0.0013, compared 40, OOD 0
+   DOP853 rtol = 1e-10: 17.7 s, steps 109, median err 6.1e-09, max 1.4e-05, compared 40, OOD 0
+   DOP853 rtol = 1e-12: 23.9 s, steps 181, median err 4e-11, max 1.1e-07, compared 40, OOD 0
+ solver re-run: repeats 3, reference rtol 1e-13
+   RK4 h = 0.1: 3.6 s, steps 793, median err 0.00055, max 50, compared 34, OOD 20
+   RK4 h = 0.01: 33.9 s, steps 8076, median err 1.8e-07, max 42, compared 40, OOD 20
+   RK45 rtol = 1e-06: 1.3 s, steps 80, median err 0.00018, max 0.24, compared 40, OOD 0
+   RK45 rtol = 1e-08: 1.9 s, steps 174, median err 2.7e-06, max 0.0024, compared 40, OOD 0
+   RK45 rtol = 1e-10: 4.1 s, steps 436, median err 2.4e-08, max 2.4e-05, compared 40, OOD 0
+   RK45 rtol = 1e-12: 9.2 s, steps 1100, median err 2.1e-10, max 1.9e-07, compared 40, OOD 0
+   DOP853 rtol = 1e-06: 7.1 s, steps 40, median err 0.00012, max 0.37, compared 40, OOD 0
+   DOP853 rtol = 1e-08: 8.9 s, steps 64, median err 1e-06, max 0.0013, compared 40, OOD 0
+   DOP853 rtol = 1e-10: 19.1 s, steps 109, median err 6.1e-09, max 1.4e-05, compared 40, OOD 0
+   DOP853 rtol = 1e-12: 20.6 s, steps 181, median err 4e-11, max 1.1e-07, compared 40, OOD 0
+ RK45 error slope vs rtol: max 1.016, median 0.994
+ cpu 20260929T052912Z-f23a49: parameters {"ray_counts": [1000, 10000, 100000, 1000000], "backends": ["numpy", "numba"], "dtypes": ["float32", "float64"], "repeats": 3, "max_seconds_per_run": 2000.0, "reference_rays": 200, "reference_rtol": 1e-12, "horizon_epsilon_float32": 0.001, "precision_tolerances": [1e-05, 1e-06, 1e-07]}
+   camera {"radius": 1000.0, "inclination_deg": 60.0, "fov": 12.0}; integration {"method": "rk45", "rtol": 1e-09, "atol": 1e-11, "dtype": "float64"}
+ cpu 20260929T100220Z-46bc35: parameters {"ray_counts": [1000, 10000, 100000, 1000000], "backends": ["numpy", "numba"], "dtypes": ["float32", "float64"], "repeats": 3, "max_seconds_per_run": 600.0, "reference_rays": 200, "reference_rtol": 1e-12, "horizon_epsilon_float32": 0.001, "precision_tolerances": [1e-05, 1e-06, 1e-07]}
+   camera {"radius": 1000.0, "inclination_deg": 60.0, "fov": 12.0}; integration {"method": "rk45", "rtol": 1e-09, "atol": 1e-11, "dtype": "float64"}
+ precision 20260929T060841Z-f365e3: keys ['parameters', 'spacetime', 'camera', 'integration', 'horizon_epsilon', 'runs', 'comparisons', 'backends_unavailable', 'hardware', 'git_commit', 'figures']
+    {'backend': 'numpy', 'rtol': 1e-05, 'compared': 'float64_control vs float32', 'n_captured_a': 558, 'n_captured_b': 558, 'n_differing_pixels': 0, 'equivalent_radius_a_M': 4.997737376201787, 'equivalent_radius_b_M': 4.997737376201787, 'equivalent_radius_diff_M': 0.0, 'equivalent_radius_diff_px': 0.0, 'boundary_radius_a_M': 4.825497171071122, 'boundary_radius_b_M': 4.825497171071122, 'boundary_radius_diff_M': 0.0, 'boundary_radius_diff_px': 0.0, 'n_state_mismatch': 0, 'runtime_ratio_f32_over_f64': 0.5190013049983322, 'subpixel_boundary_max_diff_M': 0.0, 'subpixel_boundary_rms_diff_M': 0.0, 'subpixel_boundary_max_diff_px': 0.0}
+    {'backend': 'numpy', 'rtol': 1e-05, 'compared': 'float64 vs float64_control (margin only)', 'n_captured_a': 558, 'n_captured_b': 558, 'n_differing_pixels': 0, 'equivalent_radius_a_M': 4.997737376201787, 'equivalent_radius_b_M': 4.997737376201787, 'equivalent_radius_diff_M': 0.0, 'equivalent_radius_diff_px': 0.0, 'boundary_radius_a_M': 4.825497171071122, 'boundary_radius_b_M': 4.825497171071122, 'boundary_radius_diff_M': 0.0, 'boundary_radius_diff_px': 0.0, 'n_state_mismatch': 0, 'runtime_ratio_f32_over_f64': None, 'subpixel_boundary_max_diff_M': 0.0, 'subpixel_boundary_rms_diff_M': 0.0, 'subpixel_boundary_max_diff_px': 0.0}
+    {'backend': 'numpy', 'rtol': 1e-06, 'compared': 'float64_control vs float32', 'n_captured_a': 558, 'n_captured_b': 558, 'n_differing_pixels': 0, 'equivalent_radius_a_M': 4.997737376201787, 'equivalent_radius_b_M': 4.997737376201787, 'equivalent_radius_diff_M': 0.0, 'equivalent_radius_diff_px': 0.0, 'boundary_radius_a_M': 4.825497171071122, 'boundary_radius_b_M': 4.825497171071122, 'boundary_radius_diff_M': 0.0, 'boundary_radius_diff_px': 0.0, 'n_state_mismatch': 0, 'runtime_ratio_f32_over_f64': 0.7035650816661185, 'subpixel_boundary_max_diff_M': 0.0, 'subpixel_boundary_rms_diff_M': 0.0, 'subpixel_boundary_max_diff_px': 0.0}
+    {'backend': 'numpy', 'rtol': 1e-06, 'compared': 'float64 vs float64_control (margin only)', 'n_captured_a': 558, 'n_captured_b': 558, 'n_differing_pixels': 0, 'equivalent_radius_a_M': 4.997737376201787, 'equivalent_radius_b_M': 4.997737376201787, 'equivalent_radius_diff_M': 0.0, 'equivalent_radius_diff_px': 0.0, 'boundary_radius_a_M': 4.825497171071122, 'boundary_radius_b_M': 4.825497171071122, 'boundary_radius_diff_M': 0.0, 'boundary_radius_diff_px': 0.0, 'n_state_mismatch': 0, 'runtime_ratio_f32_over_f64': None, 'subpixel_boundary_max_diff_M': 0.0, 'subpixel_boundary_rms_diff_M': 0.0, 'subpixel_boundary_max_diff_px': 0.0}
+    {'backend': 'numpy', 'rtol': 1e-07, 'compared': 'float64_control vs float32', 'n_captured_a': 558, 'n_captured_b': 558, 'n_differing_pixels': 0, 'equivalent_radius_a_M': 4.997737376201787, 'equivalent_radius_b_M': 4.997737376201787, 'equivalent_radius_diff_M': 0.0, 'equivalent_radius_diff_px': 0.0, 'boundary_radius_a_M': 4.825497171071122, 'boundary_radius_b_M': 4.825497171071122, 'boundary_radius_diff_M': 0.0, 'boundary_radius_diff_px': 0.0, 'n_state_mismatch': 0, 'runtime_ratio_f32_over_f64': 2.0252212633230444, 'subpixel_boundary_max_diff_M': 0.0, 'subpixel_boundary_rms_diff_M': 0.0, 'subpixel_boundary_max_diff_px': 0.0}
+    {'backend': 'numpy', 'rtol': 1e-07, 'compared': 'float64 vs float64_control (margin only)', 'n_captured_a': 558, 'n_captured_b': 558, 'n_differing_pixels': 0, 'equivalent_radius_a_M': 4.997737376201787, 'equivalent_radius_b_M': 4.997737376201787, 'equivalent_radius_diff_M': 0.0, 'equivalent_radius_diff_px': 0.0, 'boundary_radius_a_M': 4.825497171071122, 'boundary_radius_b_M': 4.825497171071122, 'boundary_radius_diff_M': 0.0, 'boundary_radius_diff_px': 0.0, 'n_state_mismatch': 0, 'runtime_ratio_f32_over_f64': None, 'subpixel_boundary_max_diff_M': 0.0, 'subpixel_boundary_rms_diff_M': 0.0, 'subpixel_boundary_max_diff_px': 0.0}
+    {'backend': 'numba', 'rtol': 1e-05, 'compared': 'float64_control vs float32', 'n_captured_a': 558, 'n_captured_b': 558, 'n_differing_pixels': 0, 'equivalent_radius_a_M': 4.997737376201787, 'equivalent_radius_b_M': 4.997737376201787, 'equivalent_radius_diff_M': 0.0, 'equivalent_radius_diff_px': 0.0, 'boundary_radius_a_M': 4.825497171071122, 'boundary_radius_b_M': 4.825497171071122, 'boundary_radius_diff_M': 0.0, 'boundary_radius_diff_px': 0.0, 'n_state_mismatch': 0, 'runtime_ratio_f32_over_f64': 1.1541778758094494, 'subpixel_boundary_max_diff_M': 0.0, 'subpixel_boundary_rms_diff_M': 0.0, 'subpixel_boundary_max_diff_px': 0.0}
+    {'backend': 'numba', 'rtol': 1e-05, 'compared': 'float64 vs float64_control (margin only)', 'n_captured_a': 558, 'n_captured_b': 558, 'n_differing_pixels': 0, 'equivalent_radius_a_M': 4.997737376201787, 'equivalent_radius_b_M': 4.997737376201787, 'equivalent_radius_diff_M': 0.0, 'equivalent_radius_diff_px': 0.0, 'boundary_radius_a_M': 4.825497171071122, 'boundary_radius_b_M': 4.825497171071122, 'boundary_radius_diff_M': 0.0, 'boundary_radius_diff_px': 0.0, 'n_state_mismatch': 0, 'runtime_ratio_f32_over_f64': None, 'subpixel_boundary_max_diff_M': 0.0, 'subpixel_boundary_rms_diff_M': 0.0, 'subpixel_boundary_max_diff_px': 0.0}
+    {'backend': 'numba', 'rtol': 1e-06, 'compared': 'float64_control vs float32', 'n_captured_a': 558, 'n_captured_b': 558, 'n_differing_pixels': 0, 'equivalent_radius_a_M': 4.997737376201787, 'equivalent_radius_b_M': 4.997737376201787, 'equivalent_radius_diff_M': 0.0, 'equivalent_radius_diff_px': 0.0, 'boundary_radius_a_M': 4.825497171071122, 'boundary_radius_b_M': 4.825497171071122, 'boundary_radius_diff_M': 0.0, 'boundary_radius_diff_px': 0.0, 'n_state_mismatch': 0, 'runtime_ratio_f32_over_f64': 0.8574752238560399, 'subpixel_boundary_max_diff_M': 0.0, 'subpixel_boundary_rms_diff_M': 0.0, 'subpixel_boundary_max_diff_px': 0.0}
+    {'backend': 'numba', 'rtol': 1e-06, 'compared': 'float64 vs float64_control (margin only)', 'n_captured_a': 558, 'n_captured_b': 558, 'n_differing_pixels': 0, 'equivalent_radius_a_M': 4.997737376201787, 'equivalent_radius_b_M': 4.997737376201787, 'equivalent_radius_diff_M': 0.0, 'equivalent_radius_diff_px': 0.0, 'boundary_radius_a_M': 4.825497171071122, 'boundary_radius_b_M': 4.825497171071122, 'boundary_radius_diff_M': 0.0, 'boundary_radius_diff_px': 0.0, 'n_state_mismatch': 0, 'runtime_ratio_f32_over_f64': None, 'subpixel_boundary_max_diff_M': 0.0, 'subpixel_boundary_rms_diff_M': 0.0, 'subpixel_boundary_max_diff_px': 0.0}
+    {'backend': 'numba', 'rtol': 1e-07, 'compared': 'float64_control vs float32', 'n_captured_a': 558, 'n_captured_b': 558, 'n_differing_pixels': 0, 'equivalent_radius_a_M': 4.997737376201787, 'equivalent_radius_b_M': 4.997737376201787, 'equivalent_radius_diff_M': 0.0, 'equivalent_radius_diff_px': 0.0, 'boundary_radius_a_M': 4.825497171071122, 'boundary_radius_b_M': 4.825497171071122, 'boundary_radius_diff_M': 0.0, 'boundary_radius_diff_px': 0.0, 'n_state_mismatch': 0, 'runtime_ratio_f32_over_f64': 1.0954313824036142, 'subpixel_boundary_max_diff_M': 0.0, 'subpixel_boundary_rms_diff_M': 0.0, 'subpixel_boundary_max_diff_px': 0.0}
+    {'backend': 'numba', 'rtol': 1e-07, 'compared': 'float64 vs float64_control (margin only)', 'n_captured_a': 558, 'n_captured_b': 558, 'n_differing_pixels': 0, 'equivalent_radius_a_M': 4.997737376201787, 'equivalent_radius_b_M': 4.997737376201787, 'equivalent_radius_diff_M': 0.0, 'equivalent_radius_diff_px': 0.0, 'boundary_radius_a_M': 4.825497171071122, 'boundary_radius_b_M': 4.825497171071122, 'boundary_radius_diff_M': 0.0, 'boundary_radius_diff_px': 0.0, 'n_state_mismatch': 0, 'runtime_ratio_f32_over_f64': None, 'subpixel_boundary_max_diff_M': 0.0, 'subpixel_boundary_rms_diff_M': 0.0, 'subpixel_boundary_max_diff_px': 0.0}

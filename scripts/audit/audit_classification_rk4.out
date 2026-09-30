@@ -1,0 +1,9 @@
+Schwarzschild b=4, h=0.05, last 5 accepted (r, p_r, code): [(2.1422, '-13.2', 'RUNNING'), (2.0976, '-19.6', 'RUNNING'), (2.0514, '-38.7', 'RUNNING'), (2.0237, '-225', 'RUNNING'), (-507.8567, '-1.23e+05', 'OUT_OF_DOMAIN')]
+a=0.0: 200 of 200 photons are captured under RK45 rtol 1e-10 (reference fate); RK4 runs use these
+a=0.0 h=0.1: codes {'OUT_OF_DOMAIN': 200}; final r: min -4.37e+09 max 5.01e+03; last r before termination in [2.035, 3057.090] (r_+ = 2.000); with capture evaluated before r<0: 197/200 captured, escaped 0
+a=0.0 h=0.05: codes {'OUT_OF_DOMAIN': 200}; final r: min -1.71e+09 max -249; last r before termination in [2.018, 4232.943] (r_+ = 2.000); with capture evaluated before r<0: 200/200 captured, escaped 0
+a=0.0 h=0.01: codes {'OUT_OF_DOMAIN': 200}; final r: min -1.26e+12 max -1.04e+03; last r before termination in [2.004, 36887.465] (r_+ = 2.000); with capture evaluated before r<0: 200/200 captured, escaped 0
+a=0.9: 200 of 200 photons are captured under RK45 rtol 1e-10 (reference fate); RK4 runs use these
+a=0.9 h=0.1: codes {'ESCAPED': 5, 'OUT_OF_DOMAIN': 195}; final r: min -3.03e+12 max 1.31e+05; last r before termination in [1.452, 997.502] (r_+ = 1.436); with capture evaluated before r<0: 191/200 captured, escaped 5
+a=0.9 h=0.05: codes {'ESCAPED': 3, 'OUT_OF_DOMAIN': 197}; final r: min -2.22e+11 max 1.98e+07; last r before termination in [1.443, 998.820] (r_+ = 1.436); with capture evaluated before r<0: 192/200 captured, escaped 3
+a=0.9 h=0.01: codes {'ESCAPED': 1, 'OUT_OF_DOMAIN': 199}; final r: min -1.17e+14 max 3.78e+03; last r before termination in [1.437, 1097.075] (r_+ = 1.436); with capture evaluated before r<0: 193/200 captured, escaped 1

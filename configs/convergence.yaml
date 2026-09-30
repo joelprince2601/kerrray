@@ -1,0 +1,49 @@
+# KerrRay configuration: numerical convergence studies (PROJECT.md sections 18 to 20).
+# Schema: PROJECT.md section 34 plus docs/architecture.md section 7
+# (src/kerrray/utils/config.py; docs/decisions.md D-004, D-009).
+# Units: G = c = 1, lengths in units of the black-hole mass M (M = 1 here).
+experiment:
+  name: convergence
+  description: >-
+    Shadow resolution convergence (EXP-008), solver comparison and tolerance
+    sweep (EXP-006, section 19) and step-size study (section 20) for Phase 6.
+    Errors are measured against tight-tolerance references, never assumed.
+  seed: 0
+  output_dir: runs
+  report_dir: reports
+  parameters:
+    # EXP-008 / section 18: image resolutions (pixels per side); 1024 is opt-in
+    # through a CLI override and the driver logs what it skipped.
+    # Section 19: adaptive tolerances (rtol; atol follows the driver's rule).
+    # Section 20: fixed step sizes in the affine parameter (units of M).
+    convergence:
+      resolutions: [64, 128, 256, 512]
+      tolerances: [1.0e-6, 1.0e-8, 1.0e-10, 1.0e-12]
+      step_sizes: [0.1, 0.01, 0.001, 0.0001]
+
+black_hole:
+  mass: 1.0
+  spin: 0.9
+
+observer:
+  radius: 1000.0
+  inclination_deg: 60.0
+  phi_deg: 0.0
+
+integration:
+  method: rk45
+  rtol: 1e-9
+  atol: 1e-11
+  max_steps: 100000
+  step_size: 0.01
+  lambda_max: 10000.0
+
+raytrace:
+  resolution: 64          # development default; the study is driven by
+  fov: 12.0               # experiment.parameters.convergence.resolutions
+  backend: numpy
+  dtype: float64
+
+termination:
+  horizon_epsilon: 1e-6
+  escape_radius: 1000.0

@@ -1,0 +1,3 @@
+a=0.0: failed 23 of 544; rule: r<0 23, theta out 0, other 0; true fate escaped 18; |L_z| of failed: min 0.445 median 0.456; directions affected 2 of 16; accepted steps of failed: median 14, max 16
+a=0.9: failed 38 of 544; rule: r<0 38, theta out 0, other 0; true fate escaped 33; |L_z| of failed: min 0.187 median 1.019; directions affected 2 of 16; accepted steps of failed: median 13, max 16
+a=0.99: failed 50 of 544; rule: r<0 50, theta out 0, other 0; true fate escaped 47; |L_z| of failed: min 0.395 median 0.418; directions affected 3 of 16; accepted steps of failed: median 16, max 17

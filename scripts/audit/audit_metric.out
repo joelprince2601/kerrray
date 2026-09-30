@@ -1,0 +1,25 @@
+D:\Blackhole_PJT\kerrray\src\kerrray\geometry\metric.py:160: RuntimeWarning: divide by zero encountered in scalar divide
+  g_rr = sig / dlt
+det2 (t-phi block) = -(-2*M*r + a**2 + r**2)*sin(theta)**2
+det g - (-Sigma^2 sin^2) simplifies to: 0
+g^00: closed form - hand inverse -> 0
+g^03: closed form - hand inverse -> 0
+g^11: closed form - hand inverse -> 0
+g^22: closed form - hand inverse -> 0
+g^33: closed form - hand inverse -> 0
+g * ginv - I -> Matrix([[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]])
+Schwarzschild limit g(a=0): [(2*M - r)/r, r/(-2*M + r), r**2, r**2*sin(theta)**2] g_tphi: 0
+max |code - independent sympy| / max|component| over 2000 random points:
+   g          3.84e-15
+   ginv       4.02e-15
+   dg_r       7.96e-15
+   dg_th      3.92e-15
+   dginv_r    7.18e-14
+   dginv_th   4.46e-15
+   g.ginv-I   3.36e-13
+max |R_mu nu| (independent metric, 40-digit arithmetic, 10 random points): 1.47e-39
+elapsed Ricci section: 13.0 s
+roots of Delta: [M - sqrt((M - a)*(M + a)), M + sqrt((M - a)*(M + a))]
+roots of g_tt = 0: [M - sqrt(M**2 - a**2*cos(theta)**2), M + sqrt(M**2 - a**2*cos(theta)**2)]
+horizon/ergosphere max deviation (and |g_tt(r_E)|): 1.11e-16
+total elapsed 16.0 s

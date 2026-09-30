@@ -1,0 +1,54 @@
+# KerrRay configuration: near-critical photon trajectories (PROJECT.md section 21, EXP-007).
+# Schema: PROJECT.md section 34 plus docs/architecture.md section 7
+# (src/kerrray/utils/config.py; docs/decisions.md D-004, D-009).
+# Units: G = c = 1, lengths in units of the black-hole mass M (M = 1 here).
+experiment:
+  name: near_critical
+  description: >-
+    Sensitivity of photons launched near the critical impact parameter (Phase 6):
+    orbital turns, affine length, conservation drift and sensitivity to initial
+    conditions. The critical impact parameter is computed at run time, never stored here.
+  seed: 0
+  output_dir: runs
+  report_dir: reports
+  parameters:
+    # Dimensionless offsets delta applied to the computed critical impact parameter
+    # b_c, i.e. relative offsets b = b_c (1 + delta) and b = b_c (1 - delta), launched
+    # from launch_radius (kerrray.experiments.near_critical).
+    # PROVISIONAL Phase 6 design choice, not taken from PROJECT.md: section 21 and
+    # EXP-007 name the quantities to measure but specify no offset values. Phase 6
+    # may replace this list; it is an experiment input, never a reference value.
+    near_critical:
+      offsets: [1.0e-1, 1.0e-2, 1.0e-3, 1.0e-4, 1.0e-5, 1.0e-6, 1.0e-7, 1.0e-8]
+      launch_radius: 1000.0
+
+black_hole:
+  mass: 1.0
+  spin: 0.0
+
+observer:
+  radius: 1000.0
+  inclination_deg: 90.0   # equatorial plane
+  phi_deg: 0.0
+
+integration:
+  method: rk45
+  # rtol, atol and max_steps are tighter than the section 34 example. This is a
+  # provisional Phase 6 design choice (PROJECT.md gives no values for this
+  # experiment): near-critical trajectories are numerically sensitive, and the
+  # step-size / tolerance study of Phase 6 decides the final settings.
+  rtol: 1e-12
+  atol: 1e-14
+  max_steps: 1000000
+  step_size: 0.01
+  lambda_max: 10000.0
+
+raytrace:
+  resolution: 64
+  fov: 12.0
+  backend: numpy
+  dtype: float64
+
+termination:
+  horizon_epsilon: 1e-6
+  escape_radius: 1000.0

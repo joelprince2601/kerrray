@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kerrray"
+dynamic = ["version"]
+description = "Numerical relativistic ray-tracing engine for photon dynamics in Schwarzschild and Kerr spacetime"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+authors = [{ name = "Joel Prince" }]
+keywords = [
+  "general-relativity",
+  "kerr",
+  "black-hole",
+  "null-geodesics",
+  "ray-tracing",
+  "numerical-methods",
+]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Astronomy",
+  "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = [
+  "numpy",
+  "scipy",
+  "sympy",
+  "matplotlib",
+  "typer",
+  "rich",
+  "pyyaml",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+fast = ["numba"]  # optional compiled CPU backend (kerrray.raytracing.backends.numba_backend)
+
+[project.scripts]
+kerrray = "kerrray.cli:app"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+kerrray = ["web/static/*"]
+
+[tool.setuptools.dynamic]
+version = { attr = "kerrray.__version__" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

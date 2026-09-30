@@ -1,0 +1,64 @@
+# KerrRay configuration: rotating Kerr black hole, default spin 0.9.
+# Schema: PROJECT.md section 34 plus docs/architecture.md section 7
+# (src/kerrray/utils/config.py; docs/decisions.md D-004, D-009).
+# Units: G = c = 1, lengths in units of the black-hole mass M (M = 1 here).
+experiment:
+  name: kerr
+  description: >-
+    Kerr setup for the Phase 4 validation (PROJECT.md section 13): horizon,
+    Schwarzschild convergence as spin -> 0, conserved quantities, prograde and
+    retrograde behaviour, near-extremal tests, plus the frame-dragging
+    experiment EXP-005 and the spin sweep EXP-003. Reference values are computed
+    at run time, never stored here.
+  seed: 0
+  output_dir: runs
+  report_dir: reports
+  parameters:
+    # EXP-005 (PROJECT.md section 14): the same |b| launched identically for
+    # negative, zero and positive spin.
+    frame_dragging:
+      spins: [-0.9, 0.0, 0.9]
+      impact_parameter: 6.0
+      launch_radius: 1000.0
+    # EXP-003 spin sweep (PROJECT.md section 37).
+    spin_sweep:
+      spins: [0.0, 0.25, 0.5, 0.75, 0.9, 0.99]
+    # Section 13 validation inputs. PROVISIONAL pass/fail tolerances and test
+    # spins chosen for Phase 4 (PROJECT.md gives none): they are experiment
+    # inputs, never reference values. The near-extremal spins follow the
+    # section 4.1 list and stay configurable.
+    validation:
+      horizon_tol: 1.0e-12             # relative error of r_+ against M + sqrt(M^2 - a^2)
+      small_spins: [1.0e-2, 1.0e-3, 1.0e-4]   # spins for the a -> 0 convergence check
+      schwarzschild_limit_tol: 1.0e-6  # tolerance on the a -> 0 limit
+      conservation_tol: 1.0e-8         # max relative drift of E, L_z, Q and the null constraint
+      critical_b_tol: 1.0e-6           # bisection tolerance on the prograde/retrograde b_c
+      bisection_iterations: 60
+      near_extremal_spins: [0.99, 0.999]
+
+black_hole:
+  mass: 1.0
+  spin: 0.9
+
+observer:
+  radius: 1000.0
+  inclination_deg: 60.0
+  phi_deg: 0.0
+
+integration:
+  method: rk45
+  rtol: 1e-9
+  atol: 1e-11
+  max_steps: 100000
+  step_size: 0.01
+  lambda_max: 10000.0
+
+raytrace:
+  resolution: 64
+  fov: 12.0
+  backend: numpy
+  dtype: float64
+
+termination:
+  horizon_epsilon: 1e-6
+  escape_radius: 1000.0

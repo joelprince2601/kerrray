@@ -1,0 +1,17 @@
+max |A - scipy A| (rows 0..5): 0.0  (scipy A shape (6, 5) )
+max |B - scipy B|: 0.0  (B[6] = 0: True )
+max |C - scipy C|: 0.0
+max |E - scipy E|: 1.3877787807814457e-17
+FSAL: last row of A == B: True
+row-sum condition max |sum_j a_ij - c_i|: 6.661338147750939e-16
+quadrature conditions sum b_i c_i^k = 1/(k+1), k<5: max dev 2.2e-16
+quadrature conditions sum b_hat_i c_i^k = 1/(k+1), k<4: max dev 1.7e-16
+b_hat fifth-order quadrature deviation (must be non-zero): 0.0002629629629629371
+error_norm vs HNW formula: 0.0
+step_factor: [5.         5.         2.26069779 1.03382852 0.9        0.78349551
+ 0.2       ]  after rejection: [1.         1.         1.         1.         0.9        0.78349551
+ 0.2       ]
+DP5 global order: [5.16, 5.09, 4.92]
+numpy vs numba rk45 {'rtol': 1e-06, 'atol': 1e-08}: identical states True, identical steps True, max rel |dY| 0.0e+00, states [  0 398 178   0   0   0   0]
+numpy vs numba rk45 {'rtol': 0.0001, 'atol': 1e-06}: identical states True, identical steps True, max rel |dY| 0.0e+00, states [  0 399 177   0   0   0   0]
+numpy vs numba rk4 {'step_size': 0.1, 'max_steps': 20000}: identical states True, identical steps True, max rel |dY| 0.0e+00, states [  0   2   0 398   0 176   0]

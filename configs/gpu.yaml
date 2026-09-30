@@ -1,0 +1,55 @@
+# KerrRay configuration: CPU performance benchmark and precision study
+# (EXP-009 and EXP-011). The file name is kept for PROJECT.md section 30
+# compatibility; GPU acceleration is OPTIONAL FUTURE WORK (docs/decisions.md,
+# D-007), so this file holds the CPU benchmark and is a same-content alias of
+# configs/benchmark.yaml. "kerrray benchmark gpu" only reports that no GPU
+# path exists; it never invents a number.
+# Schema: PROJECT.md section 34 plus docs/architecture.md section 7
+# (src/kerrray/utils/config.py; docs/decisions.md D-004, D-009).
+# Units: G = c = 1, lengths in units of the black-hole mass M (M = 1 here).
+experiment:
+  name: gpu
+  description: >-
+    CPU benchmark (EXP-009): wall-clock runtime, peak memory, max null-constraint
+    error, max energy drift and trajectory error versus ray count on the numpy
+    and numba backends, plus the float32/float64 precision study (EXP-011).
+    GPU acceleration is optional future work (docs/decisions.md, D-007); every
+    number is measured, never assumed.
+  seed: 0
+  output_dir: runs
+  report_dir: reports
+  parameters:
+    # docs/architecture.md section 7 / section 9: ray counts, CPU backends,
+    # precisions and repetitions of each timing.
+    benchmark:
+      ray_counts: [1000, 10000, 100000, 1000000]
+      backends: [numpy, numba]
+      dtypes: [float32, float64]
+      repeats: 3
+
+black_hole:
+  mass: 1.0
+  spin: 0.9
+
+observer:
+  radius: 1000.0
+  inclination_deg: 60.0
+  phi_deg: 0.0
+
+integration:
+  method: rk45
+  rtol: 1e-9
+  atol: 1e-11
+  max_steps: 100000
+  step_size: 0.01
+  lambda_max: 10000.0
+
+raytrace:
+  resolution: 64          # development default; the benchmark derives its ray counts from
+  fov: 12.0               # experiment.parameters.benchmark.ray_counts, not from this value
+  backend: numpy
+  dtype: float64
+
+termination:
+  horizon_epsilon: 1e-6
+  escape_radius: 1000.0

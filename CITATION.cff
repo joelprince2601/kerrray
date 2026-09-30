@@ -1,0 +1,30 @@
+# Citation metadata for the KerrRay software (https://citation-file-format.github.io).
+# When an archive DOI exists (for example from Zenodo), uncomment and fill:
+# doi: "[ZENODO DOI]"
+# Once the paper has an arXiv identifier, add a preferred-citation block for it.
+cff-version: 1.2.0
+repository-code: "https://github.com/joelprince2601/kerrray"
+date-released: "2026-09-30"
+message: "If you use KerrRay, please cite it using these metadata."
+type: software
+title: "KerrRay: a CPU ray tracer for photon geodesics in Kerr spacetime"
+version: 0.1.0
+license: MIT
+authors:
+  - family-names: Prince
+    given-names: Joel
+abstract: >-
+  KerrRay integrates null geodesics of the Kerr metric in Hamiltonian form in
+  Boyer-Lindquist coordinates with an adaptive Dormand-Prince 5(4) scheme,
+  with NumPy and Numba backends. It is the code behind the study "How
+  accurate is a numerically reconstructed Kerr black-hole shadow?
+  Resolution, tolerance and integration failures in an open CPU ray tracer",
+  which measures the error of reconstructed shadow edges against the
+  analytic Bardeen curve.
+keywords:
+  - general relativity
+  - Kerr black hole
+  - black-hole shadow
+  - null geodesics
+  - ray tracing
+  - numerical methods

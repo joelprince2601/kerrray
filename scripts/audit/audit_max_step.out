@@ -1,0 +1,32 @@
+Images: N = 512, i = 60 deg, r_o = 1000 M, rtol = 0.0001, atol = rtol * 1e-2
+a=0.0   h_max= None: failed  246 (r<0  222, theta out  24); pixels disagreeing with oracle  36; edge rms 6.774e-03 M max 2.782e-02 M; median steps 39; 27.3 s
+a=0.0   h_max=100.0: failed   24 (r<0    0, theta out  24); pixels disagreeing with oracle  40; edge rms 6.707e-03 M max 1.477e-02 M; median steps 46; 26.6 s
+a=0.0   h_max= 10.0: failed   34 (r<0    0, theta out  34); pixels disagreeing with oracle  48; edge rms 8.104e-03 M max 1.217e-01 M; median steps 211; 68.3 s
+a=0.5   h_max= None: failed  325 (r<0  288, theta out  37); pixels disagreeing with oracle  39; edge rms 7.965e-03 M max 8.593e-02 M; median steps 39; 22.8 s
+a=0.5   h_max=100.0: failed   37 (r<0    0, theta out  37); pixels disagreeing with oracle  40; edge rms 7.404e-03 M max 5.514e-02 M; median steps 46; 23.5 s
+a=0.5   h_max= 10.0: failed   38 (r<0    0, theta out  38); pixels disagreeing with oracle  39; edge rms 7.970e-03 M max 8.590e-02 M; median steps 211; 72.2 s
+a=0.9   h_max= None: failed  241 (r<0  181, theta out  60); pixels disagreeing with oracle  63; edge rms 7.393e-03 M max 4.578e-02 M; median steps 39; 21.1 s
+a=0.9   h_max=100.0: failed   51 (r<0    0, theta out  51); pixels disagreeing with oracle  51; edge rms 7.227e-03 M max 4.567e-02 M; median steps 46; 24.1 s
+a=0.9   h_max= 10.0: failed   59 (r<0    0, theta out  59); pixels disagreeing with oracle  57; edge rms 8.416e-03 M max 1.168e-01 M; median steps 211; 63.4 s
+a=0.99  h_max= None: failed  220 (r<0  161, theta out  59); pixels disagreeing with oracle  56; edge rms 7.651e-03 M max 6.963e-02 M; median steps 39; 23.4 s
+a=0.99  h_max=100.0: failed   56 (r<0    0, theta out  56); pixels disagreeing with oracle  55; edge rms 7.786e-03 M max 6.878e-02 M; median steps 46; 27.2 s
+a=0.99  h_max= 10.0: failed   49 (r<0    0, theta out  49); pixels disagreeing with oracle  42; edge rms 7.194e-03 M max 1.476e-02 M; median steps 211; 64.6 s
+Bisection: 16 directions, 34 iterations, r_o = 1e5 M, i = 60 deg
+a=0.0   rtol=1e-04 h_max=  None: rms 1.82e-02 M, max 7.27e-02 M, failed photons 23, 0.2 s
+a=0.0   rtol=1e-04 h_max=1000.0: rms 4.06e-04 M, max 1.34e-03 M, failed photons 0, 0.3 s
+a=0.0   rtol=1e-04 h_max= 100.0: rms 4.02e-04 M, max 1.20e-03 M, failed photons 0, 1.3 s
+a=0.0   rtol=1e-05 h_max=  None: rms 1.97e-05 M, max 4.21e-05 M, failed photons 0, 0.3 s
+a=0.0   rtol=1e-05 h_max=1000.0: rms 1.83e-05 M, max 4.46e-05 M, failed photons 0, 0.4 s
+a=0.0   rtol=1e-05 h_max= 100.0: rms 1.94e-05 M, max 5.01e-05 M, failed photons 0, 1.4 s
+a=0.9   rtol=1e-04 h_max=  None: rms 2.57e-02 M, max 1.03e-01 M, failed photons 38, 0.3 s
+a=0.9   rtol=1e-04 h_max=1000.0: rms 6.42e-04 M, max 2.18e-03 M, failed photons 0, 0.4 s
+a=0.9   rtol=1e-04 h_max= 100.0: rms 3.19e-04 M, max 8.19e-04 M, failed photons 0, 1.6 s
+a=0.9   rtol=1e-05 h_max=  None: rms 2.18e-05 M, max 4.85e-05 M, failed photons 1, 0.3 s
+a=0.9   rtol=1e-05 h_max=1000.0: rms 1.67e-05 M, max 3.49e-05 M, failed photons 0, 0.5 s
+a=0.9   rtol=1e-05 h_max= 100.0: rms 1.63e-05 M, max 3.09e-05 M, failed photons 0, 1.7 s
+a=0.99  rtol=1e-04 h_max=  None: rms 3.32e-02 M, max 9.69e-02 M, failed photons 50, 0.2 s
+a=0.99  rtol=1e-04 h_max=1000.0: rms 2.95e-04 M, max 7.59e-04 M, failed photons 0, 0.3 s
+a=0.99  rtol=1e-04 h_max= 100.0: rms 9.97e-04 M, max 3.91e-03 M, failed photons 0, 1.5 s
+a=0.99  rtol=1e-05 h_max=  None: rms 2.20e-05 M, max 5.91e-05 M, failed photons 1, 0.3 s
+a=0.99  rtol=1e-05 h_max=1000.0: rms 1.88e-05 M, max 5.47e-05 M, failed photons 0, 0.5 s
+a=0.99  rtol=1e-05 h_max= 100.0: rms 1.99e-05 M, max 5.99e-05 M, failed photons 0, 1.6 s

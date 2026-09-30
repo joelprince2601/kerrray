@@ -1,0 +1,7 @@
+a=0.5 N=256 rtol=1e-4: failed 48 ({'OUT_OF_DOMAIN': 48}); rule that fired: r < 0: 41, theta outside [0, pi]: 7, |sin theta| < 1e-12: 0
+  accepted steps of failed photons: median 10, max 49 (r < 0 group: median 10)
+  r<0 group: inside shadow 41, outside 0; theta/axis group: inside 1, outside 6
+  failed photons inside the analytic shadow: 42, outside: 6; max |alpha| of failed = 0.0312 M = 0.50 px
+  re-traced at rtol 1e-10: {'ESCAPED': 6, 'CAPTURED': 42}; true fate agrees with the analytic inside/outside test for 48/48
+  failed counted as shadow (paper): rms 1.443e-02 M, max 3.077e-02 M
+  failed replaced by true fate: rms 1.441e-02 M, max 3.075e-02 M
